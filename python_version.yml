@@ -1,0 +1,14 @@
+---
+- name: python version
+  hosts: localhost
+  gather_facts: no
+
+  tasks:
+    - name: get the python version on localhost
+      command: python --version
+      register: output_var
+
+    - name: list all the environment variables
+      command: printenv
+      when: output_var.stderr.split(' ')[-1] == "2.6.6"
+      
