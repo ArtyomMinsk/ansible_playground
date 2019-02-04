@@ -11,4 +11,3 @@
     - name: list all the environment variables
       command: printenv
       when: output_var.stderr.split(' ')[-1] == "2.6.6"
-      
